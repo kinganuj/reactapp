@@ -41,9 +41,9 @@ export const auth = (email, password, isSignup) => {
         email: email,
         password: password
     }
-    let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBjQMAjrkTtQ4-i3QEL2LtvzzlmQ2zy1ls';
+    let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBMBt8GRrL4VFlDJ-wUa3ToN09Ekx5Tjyg';
     if (!isSignup) {
-        url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBjQMAjrkTtQ4-i3QEL2LtvzzlmQ2zy1ls'
+        url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBMBt8GRrL4VFlDJ-wUa3ToN09Ekx5Tjyg';
     }
     return dispatch => {
         dispatch(authStart());
