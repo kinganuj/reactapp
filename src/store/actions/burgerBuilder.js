@@ -30,8 +30,9 @@ export const setIngredient = (ingredients)=>{
 
 export const initIngredient = ()=>{
     return dispatch => {
-        axios.get('https://burgerv1.firebaseio.com/ingredient.json')
+        axios.get('/ingredient.json')
             .then(response => {
+                // console.log(response);
                 dispatch(setIngredient(response.data));
                 // this.setState({ ingredient: response.data });
             }).catch((error) => {

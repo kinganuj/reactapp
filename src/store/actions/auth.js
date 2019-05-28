@@ -41,9 +41,9 @@ export const auth = (email, password, isSignup) => {
         email: email,
         password: password
     }
-    let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBMBt8GRrL4VFlDJ-wUa3ToN09Ekx5Tjyg';
+    let url = '';
     if (!isSignup) {
-        url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBMBt8GRrL4VFlDJ-wUa3ToN09Ekx5Tjyg';
+        url = '';
     }
     return dispatch => {
         dispatch(authStart());

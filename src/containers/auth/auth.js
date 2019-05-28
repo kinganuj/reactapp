@@ -43,11 +43,11 @@ class Auth extends Component {
         formIsValid: false,
         isSignup: true
     };
-    componentDidMount(){
-        if(!this.props.building && this.props.authRedirectPath !=='/'){
+    componentDidMount() {
+        if (!this.props.building && this.props.authRedirectPath !== '/') {
             this.props.onSetAuthRedirectPath();
         }
-    }    
+    }
 
     switchAuthHandler = () => {
         this.setState(prevState => {
@@ -113,7 +113,7 @@ class Auth extends Component {
             form = <Spinner />;
         }
         let authRedirect = null;
-        if (this.props.isAuth) {            
+        if (this.props.isAuth) {
             authRedirect = <Redirect to={this.props.authRedirectPath} />;
         }
         return (
@@ -123,7 +123,9 @@ class Auth extends Component {
                 {form}
                 <Button
                     clicked={this.switchAuthHandler}
-                    btnType="Danger">Switch To {this.state.isSignup ? 'SIGNUP' : 'SIGNIN'}
+                    btnType="Danger" > Switch To {
+                        this.state.isSignup ? 'SIGNIN' : 'SIGNUP'
+                    }
                 </Button>
             </div>
         );
@@ -145,7 +147,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         onAuth: (email, password, isSignup) => dispatch(action.auth(email, password, isSignup)),
-        onSetAuthRedirectPath:()=>dispatch(action.setAuthRedirectPath('/'))
+        onSetAuthRedirectPath: () => dispatch(action.setAuthRedirectPath('/'))
     };
 };
 
